@@ -1,0 +1,88 @@
+<div class="alert alert-info">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <strong>Atenção!</strong> o filtro está ativo.
+</div>
+
+<div class="card">
+  <div class="card-heading">
+    <div style="float: right">
+      <md-button class="md-icon-button" ng-click="ctrl.toggleRight()">
+        <md-tooltip md-direction="bottom">Filtros</md-tooltip>
+        <i class="mdi-action-search i-24"></i>
+      </md-button>
+    </div>
+    <div>
+      <h2><i class="icon mdi-av-my-library-books i-20"></i> Minhas Vagas</h2>
+      <small>Obrigado por contribuir com a gente (:</small>
+    </div>
+  </div>
+
+  <div class="card-body bg-light lt">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead class="bg-dark">
+          <tr>
+            <th scope="col">Titulo</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Cliente</th>
+            <th scope="col">Status</th>
+            <th scope="col" style="width: 1px;"></th>
+          </tr>
+        </thead>
+        <tbody style="background-color: white">
+          <tr ng-repeat="job in ctrl.vacancies.data track by $index">
+            <td>{{ job._id }}</td>
+            <td>{{ job.title }}</td>
+            <td>Restaurante A</td>
+            <td><span class="label label-info">Andamento</span></td>
+            <th scope="row">
+              <md-button class="md-icon-button" aria-label="More">
+                <i class="icon mdi-navigation-menu i-24"></i>
+              </md-button>
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <center>
+      <small><strong>Página {{ ctrl.query.page }} de {{ ctrl.size }}</strong></small>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" ng-click="ctrl.otherPage(1)"><</a>
+          </li>
+          <li class="page-item {{page.active ? 'active' : ''}}" ng-repeat="page in ctrl.pagination track by $index">
+            <a class="page-link" ng-click="ctrl.otherPage(page.value)">{{ page.value }}</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" ng-click="ctrl.otherPage(ctrl.size)">></a>
+          </li>
+        </ul>
+      </nav>
+    </center>
+
+  </div>
+</div>
+
+<style media="screen">
+  .card-heading{
+      border-bottom: #0000002e solid 1px;
+  }
+
+  .label-info, .badge-info {
+      background-color: #3a87ad;
+  }
+
+  .label-success, .badge-success {
+      background-color: #468847;
+  }
+
+  .label-important, .badge-important {
+      background-color: #b94a48;
+  }
+
+  .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    vertical-align: baseline!important;
+  }
+</style>

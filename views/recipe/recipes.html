@@ -1,0 +1,105 @@
+<div class="alert alert-info">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <strong>Atenção!</strong> o filtro está ativo.
+</div>
+
+<div class="card">
+  <div class="card-heading">
+    <div style="float: right">
+      <md-button class="md-icon-button" ng-click="ctrl.toggleRight()">
+        <md-tooltip md-direction="bottom">Filtros</md-tooltip>
+        <i class="mdi-action-search i-24"></i>
+      </md-button>
+    </div>
+    <div>
+      <h2><i class="icon mdi-av-my-library-books i-20"></i> Receitas</h2>
+      <small>Você pode criar ou editar uma existente.</small>
+    </div>
+  </div>
+
+  <div class="card-body bg-light lt">
+    <table class="table table-hover">
+      <thead class="bg-dark">
+        <tr>
+          <th scope="col">Titulo</th>
+          <th scope="col">Categoria</th>
+          <th scope="col">Cliente</th>
+          <th scope="col">Status</th>
+          <th scope="col" style="width: 1px;"></th>
+        </tr>
+      </thead>
+      <tbody style="background-color: white">
+        <tr>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>Restaurante A</td>
+          <td><span class="label label-info">Andamento</span></td>
+          <th scope="row">
+            <md-button class="md-icon-button" aria-label="More">
+              <i class="icon mdi-navigation-menu i-24"></i>
+            </md-button>
+          </th>
+        </tr>
+        <tr>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>Restaurante B</td>
+          <td><span class="label label-success">Finalizado</span></td>
+          <th scope="row">
+            <md-button class="md-icon-button" aria-label="More">
+              <i class="icon mdi-navigation-menu i-24"></i>
+            </md-button>
+          </th>
+        </tr>
+        <tr>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>Padaria</td>
+          <td><span class="label label-important">Cancelado</span></td>
+          <th scope="row">
+            <md-button class="md-icon-button" aria-label="More">
+              <i class="icon mdi-navigation-menu i-24"></i>
+            </md-button>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+
+    <nav aria-label="Page navigation example" style="text-align:center">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#"><</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">></a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<button class="md-fab md-fab-bottom-right docs-scroll-fab md-button md-ink-ripple md-primary" type="button" ng-click="scrollTop()">
+    <md-tooltip md-direction="top">Nova receita</md-tooltip>
+    <md-icon class="icon mdi-av-my-library-books i-24"></md-icon>
+</button>
+
+<style media="screen">
+  .card-heading{
+      border-bottom: #0000002e solid 1px;
+  }
+
+  .label-info, .badge-info {
+      background-color: #3a87ad;
+  }
+
+  .label-success, .badge-success {
+      background-color: #468847;
+  }
+
+  .label-important, .badge-important {
+      background-color: #b94a48;
+  }
+
+  .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    vertical-align: baseline!important;
+  }
+</style>
