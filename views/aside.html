@@ -18,14 +18,9 @@
     <div class="box-cell scrollable hover">
       <div class="box-inner">
         <div class="p hidden-folded" ng-class="$state.current.data.theme ? $state.current.data.theme.primary+'-50' : app.setting.theme.primary+'-50'" style="background-image:url(images/bg.png); background-size:cover">
-          <center>
-            <div class="rounded w-90 bg-white inline pos-rlt">
-              <img src="images/a0.jpg" class="img-responsive rounded">
-            </div>
-          </center>
           <span class="block m-t-sm">
-            <span class="block font-bold">John Smith</span>
-            john.smith@gmail.com
+            <span class="block font-bold">{{ user.responsible }}</span>
+            {{ user.email }}
           </span>
         </div>
         <div id="nav" ng-include="'views/partials/aside.nav.uikit.html'"></div>

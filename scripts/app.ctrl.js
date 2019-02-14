@@ -44,6 +44,8 @@ angular.module('app')
         }
       }
 
+      $scope.user = $localStorage.user;
+
       $scope.setTheme = function(theme){
         $scope.app.setting.theme = theme;
       }

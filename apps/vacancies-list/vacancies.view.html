@@ -1,15 +1,18 @@
-<div class="alert alert-info">
+<div class="alert alert-info" ng-show="ctrl.filtered">
   <button type="button" class="close" data-dismiss="alert">×</button>
-  <strong>Atenção!</strong> o filtro está ativo.
+  <strong>Atenção!</strong> o filtro está ativo com o seguinte critério: <strong><u> {{ ctrl.query.filter }}</u></strong>.
 </div>
 
 <div class="card">
   <div class="card-heading">
     <div style="float: right">
-      <md-button class="md-icon-button" ng-click="ctrl.toggleRight()">
-        <md-tooltip md-direction="bottom">Filtros</md-tooltip>
-        <i class="mdi-action-search i-24"></i>
-      </md-button>
+      <form class="form-inline" role="form">
+            <div class="form-group">
+              <label class="sr-only" for="exampleInputEmail2">Email address</label>
+              <input type="text" class="form-control" id="exampleInputEmail2" ng-model="ctrl.query.filter" placeholder="Pesquisar">
+            </div>
+            <button type="submit" class="btn btn-default waves-effect" ng-click="ctrl.filter()"><i class="fa fa-search"></i></button>
+          </form>
     </div>
     <div>
       <h2><i class="icon mdi-av-my-library-books i-20"></i> Minhas Vagas</h2>
@@ -47,25 +50,42 @@
 
     <center>
       <small><strong>Página {{ ctrl.query.page }} de {{ ctrl.size }}</strong></small>
-      <nav aria-label="Page navigation example">
-        <ul class="pagination">
-          <li class="page-item">
-            <a class="page-link" ng-click="ctrl.otherPage(1)"><</a>
-          </li>
-          <li class="page-item {{page.active ? 'active' : ''}}" ng-repeat="page in ctrl.pagination track by $index">
-            <a class="page-link" ng-click="ctrl.otherPage(page.value)">{{ page.value }}</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" ng-click="ctrl.otherPage(ctrl.size)">></a>
-          </li>
-        </ul>
-      </nav>
+      <div id="desktop">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" ng-click="ctrl.otherPage(1)"><</a>
+            </li>
+            <li class="page-item {{page.active ? 'active' : ''}}" ng-repeat="page in ctrl.pagination track by $index">
+              <a class="page-link" ng-click="ctrl.otherPage(page.value)">{{ page.value }}</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" ng-click="ctrl.otherPage(ctrl.size)">></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div id="mobile">
+        <button type="button" class="btn btn-default waves-effect" ng-click="ctrl.otherPageMobile('back')">
+          <i class="fa fa-chevron-circle-left"></i> Anterior
+        </button>
+        <button type="button" class="btn btn-default waves-effect" ng-click="ctrl.otherPageMobile('next')">
+          Próximo <i class="fa fa-chevron-circle-right"></i>
+        </button>
+      </div>
     </center>
 
   </div>
 </div>
 
 <style media="screen">
+  #mobile { display: none; }
+  #desktop { display: block; }
+  @media screen and (max-width: 550px) {
+    #mobile { display: block; }
+    #desktop { display: none; }
+  }
   .card-heading{
       border-bottom: #0000002e solid 1px;
   }

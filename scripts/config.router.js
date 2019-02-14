@@ -47,13 +47,21 @@ angular.module('app')
             resolve: load(['scripts/controllers/chart.js','scripts/controllers/vectormap.js'])
           })
           .state('app.vacancies', {
-              url: '/vacancies',
-              templateUrl: 'apps/vacancies-list/vacancies.view.html',
-              controller: 'VacanciesCtrl',
-              resolve: load(['apps/vacancies-list/vacancies.controller.js']),
-              controllerAs: 'ctrl',
-              data: { title: 'Minhas vagas'}
-            })
+            url: '/vacancies',
+            templateUrl: 'apps/vacancies-list/vacancies.view.html',
+            controller: 'VacanciesCtrl',
+            resolve: load(['apps/vacancies-list/vacancies.controller.js']),
+            controllerAs: 'ctrl',
+            data: { title: 'Minhas vagas'}
+          })
+          .state('app.new', {
+            url: '/new-vacancy',
+            templateUrl: 'apps/new-vacancy/new-vacancy.view.html',
+            controller: 'NewVacancyCtrl',
+            resolve: load(['apps/new-vacancy/new-vacancy.controller.js']),
+            controllerAs: 'ctrl',
+            data: { title: 'Nova vaga'}
+          })
 
 
 
