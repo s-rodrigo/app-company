@@ -62,6 +62,22 @@ angular.module('app')
             controllerAs: 'ctrl',
             data: { title: 'Nova vaga'}
           })
+          .state('app.alterPassword', {
+            url: '/settings/alter-password',
+            templateUrl: 'apps/settings/alter-password.view.html',
+            controller: 'AlterPasswordCtrl',
+            resolve: load(['apps/settings/alter-password.controller.js']),
+            controllerAs: 'ctrl',
+            data: { title: 'Alterar minha senha'}
+          })
+          .state('app.alterInformations', {
+            url: '/settings/alter-informations',
+            templateUrl: 'apps/settings/alter-informations.view.html',
+            controller: 'AlterInformationsCtrl',
+            resolve: load(['apps/settings/alter-informations.controller.js']),
+            controllerAs: 'ctrl',
+            data: { title: 'Alterar minhas informações'}
+          })
 
 
 
