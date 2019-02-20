@@ -7,6 +7,20 @@ app.controller('AlterPasswordCtrl', function($http, $localStorage){
   vm.alterPassword = () => {
     vm.alert = false;
 
+    if(vm.user.newPassword.length < 8){
+      vm.msg = { text: 'Senha precisa ter no minimo 8 caracteres', type: 'warning', icon: 'mdi-action-lock' };
+      vm.alert = true;
+
+      return;
+    }
+
+    if(vm.user.newPassword.search('[a-zA-Z]') < 0){
+      vm.msg = { text: 'Senha precisa ter no minimo 1 letra', type: 'warning', icon: 'mdi-action-lock' };
+      vm.alert = true;
+
+      return;
+    }
+
     if((vm.user.newPassword == '' || !vm.user.newPassword) || (vm.user.confirmPassword == '' || !vm.user.confirmPassword)){
       vm.msg = { text: 'Defina uma nova senha.', type: 'warning', icon: 'mdi-action-info' };
       vm.alert = true;

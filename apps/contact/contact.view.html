@@ -1,0 +1,61 @@
+<div class="card">
+  <div class="card-heading">
+    <div>
+      <h2><i class="icon mdi-communication-email i-20"></i> Email</h2>
+      <small>Entre em contato conosco e ajude-nos a ter uma constante melhora.</small>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card-body lt">
+        <form id="contact-form">
+          <div class="controls">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label for="form_name">Assunto</label>
+                          <input id="form_name" type="text" name="name" class="form-control" ng-model="ctrl.contact.title" placeholder="Assunto do email">
+                      </div>
+                  </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label for="form_email">Email</label>
+                          <input id="form_email" type="email" name="email" class="form-control" ng-model="ctrl.contact.email" disabled>
+                      </div>
+                  </div>
+
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label for="form_need">Motivo</label>
+                          <select id="form_need" name="need" class="form-control" ng-model="ctrl.contact.motive">
+                              <option value="Request quotation">Reclamação</option>
+                              <option value="Request order status">Suporte</option>
+                              <option value="Request copy of an invoice">Contribuição de idéias</option>
+                              <option value="Other">Outras</option>
+                          </select>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label for="form_message">Mensagem</label>
+                          <textarea id="form_message" name="message" class="form-control" ng-model="ctrl.contact.body" placeholder="Escreva sua mensagem" rows="4"></textarea>
+                      </div>
+                  </div>
+
+                  <div class="col-md-12">
+                      <input type="submit" ng-click="ctrl.send()" class="btn btn-primary btn-send" value="Enviar">
+                  </div>
+              </div>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

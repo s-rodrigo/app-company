@@ -6,8 +6,8 @@
 <div class="card">
   <div class="card-heading">
     <div>
-      <h2><i class="icon mdi-action-lock i-20"></i>Defina uma nova senha de acesso</h2>
-      <small>Lembre-se de escolher uma senha segura e não divulgar para terceiros.</small>
+      <h2><i class="icon mdi-action-account-circle i-20"></i> Atualize suas informações</h2>
+      <small>E mantenha seus dados atualizados.</small>
     </div>
   </div>
 
@@ -16,29 +16,31 @@
       <div class="card-body lt">
         <form>
           <div class="form-group">
-            <label for="exampleInputEmail1">Email de acesso</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ng-model="ctrl.user.email" placeholder="Enter email" disabled>
-            <small id="emailHelp" class="form-text text-muted">O email de acesso não pode ser alterado no momento.</small>
+            <label for="exampleInputEmail1">Empresa</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" ng-model="ctrl.user.company">
           </div>
 
           <div class="form-group">
-            <label for="exampleInputPassword1">Senha atual</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha atual">
-          </div>
-
-          <md-divider></md-divider>
-          <br/>
-
-          <div class="form-group">
-            <label for="exampleInputPassword1">Nova senha</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Nova senha">
+            <label for="exampleInputEmail1">Responsável</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" ng-model="ctrl.user.responsible">
           </div>
 
           <div class="form-group">
-            <label for="exampleInputPassword1">Confirmar nova senha</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirmar nova senha">
+            <label for="exampleInputEmail1">Cidade</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" ng-model="ctrl.user.city.name">
           </div>
-          <button type="submit" class="btn btn-primary">Alterar senha</button>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Estado</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" ng-model="ctrl.user.city.UF">
+          </div>
+
+          <md-radio-group ng-model="ctrl.user.termsOfUse">
+            <md-radio-button value="true" class="md-primary">Aceito</md-radio-button>
+            <md-radio-button value="false" class="md-primary">Não aceito</md-radio-button>
+          </md-radio-group>
+
+          <button type="submit" class="btn btn-primary">Alterar dados</button>
         </form>
       </div>
     </div>

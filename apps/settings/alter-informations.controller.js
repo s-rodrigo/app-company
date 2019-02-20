@@ -3,4 +3,6 @@ app.controller('AlterInformationsCtrl', function($http, $localStorage){
 
   vm.user = angular.copy($localStorage.user);
   console.log(vm.user);
+
+  
 });

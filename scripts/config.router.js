@@ -78,6 +78,14 @@ angular.module('app')
             controllerAs: 'ctrl',
             data: { title: 'Alterar minhas informações'}
           })
+          .state('app.contact', {
+            url: '/contact',
+            templateUrl: 'apps/contact/contact.view.html',
+            controller: 'ContactCtrl',
+            resolve: load(['apps/contact/contact.controller.js']),
+            controllerAs: 'ctrl',
+            data: { title: 'Entre em contato conosco'}
+          })
 
 
 

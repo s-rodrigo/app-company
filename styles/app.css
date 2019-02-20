@@ -833,7 +833,7 @@ sup {
 
 .form-control {
   border-color: #cfd1d4;
-  border-radius: 0;
+  border-radius: 3;
 }
 
 .form-control,
