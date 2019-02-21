@@ -110,6 +110,8 @@ angular.module('app')
 
       $scope.logout = function(){
         delete $localStorage.token;
+        delete $localStorage.user;
+        
         $location.path('/signin');
       }
 

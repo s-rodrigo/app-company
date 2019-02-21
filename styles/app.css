@@ -6168,6 +6168,10 @@ a.text-dark:hover {
   width: 320px;
 }
 
+.w-register{
+  width: 50%;
+}
+
 .w-full {
   width: 100%;
 }
@@ -6200,4 +6204,10 @@ a.text-dark:hover {
   .w-full-xs {
     width: 100%;
   }
+}
+
+.image-login {
+    background-image: url(../images/bg-listras.png);
+    background-repeat: repeat;
+    background-position: center;
 }

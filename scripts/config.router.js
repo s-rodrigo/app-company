@@ -91,7 +91,7 @@ angular.module('app')
 
           .state('access', {
             url: '',
-            template: '<div class="indigo bg-big"><div ui-view class="fade-in-down smooth"></div></div>'
+            template: '<div class="image-login blue bg-big"><div ui-view class="fade-in-down smooth"></div></div>'
           })
           .state('access.signin', {
             url: '/signin',
@@ -99,11 +99,15 @@ angular.module('app')
             controller: 'LoginCtrl',
             resolve: load(['apps/authentication/signin.controller.js']),
             controllerAs: 'ctrl',
-            data: { title: 'Access'}
+            data: { title: 'Login'}
           })
           .state('access.signup', {
             url: '/signup',
-            templateUrl: 'views/pages/signup.html'
+            templateUrl: 'apps/register/signup.view.html',
+            controller: 'RegisterCtrl',
+            resolve: load(['apps/register/signup.controller.js']),
+            controllerAs: 'ctrl',
+            data: { title: 'Register'}
           })
           .state('access.forgot-password', {
             url: '/forgot-password',

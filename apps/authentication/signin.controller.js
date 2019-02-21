@@ -12,7 +12,8 @@ app.controller('LoginCtrl', function($localStorage, $http, $location){
       $location.path('/vacancies');
     }).catch(err => {
       console.log(err);
-      vm.msg = err.data.msg;
+      if(err.data) vm.msg = err.data.msg;
+      else vm.msg = 'Desculpe, tente novamente em instantes';
     });
   }
 });
