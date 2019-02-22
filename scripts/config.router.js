@@ -99,7 +99,7 @@ angular.module('app')
             controller: 'LoginCtrl',
             resolve: load(['apps/authentication/signin.controller.js']),
             controllerAs: 'ctrl',
-            data: { title: 'Login'}
+            data: { title: 'Acessar'}
           })
           .state('access.signup', {
             url: '/signup',
@@ -107,11 +107,15 @@ angular.module('app')
             controller: 'RegisterCtrl',
             resolve: load(['apps/register/signup.controller.js']),
             controllerAs: 'ctrl',
-            data: { title: 'Register'}
+            data: { title: 'Cadastrar-se'}
           })
           .state('access.forgot-password', {
             url: '/forgot-password',
-            templateUrl: 'views/pages/forgot-password.html'
+            templateUrl: 'apps/forgot-password/forgot-password.view.html',
+            controller: 'ForgotPasswordCtrl',
+            resolve: load(['apps/forgot-password/forgot-password.controller.js']),
+            controllerAs: 'ctrl',
+            data: { title: 'Esqueci minha senha'}
           })
           .state('access.lockme', {
             url: '/lockme',

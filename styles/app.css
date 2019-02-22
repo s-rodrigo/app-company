@@ -6168,6 +6168,10 @@ a.text-dark:hover {
   width: 320px;
 }
 
+.w-xx2 {
+  width: 520px;
+}
+
 .w-register{
   width: 50%;
 }
